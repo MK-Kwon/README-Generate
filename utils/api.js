@@ -1,17 +1,24 @@
 const axios = require("axios");
-const markDown = require("generateMarkdown.js");
+// to use environment variables (https://medium.com/@thejasonfile/using-dotenv-package-to-create-environment-variables-33da4ac4ea8f)
+require("dotenv").config();
 
 const api = {
     getUser(username) {
-        const queryUrl = `https://api.github.com/users/${username}/repos?per_page=100`;
-        axios.get(queryUrl)
-        .then(function(res){
-            console.log(res.data);
-            // const repoNames = [];
-            // res.data.forEach(repo => repoNames.push(repo.name));
-            // const repoNamesStr = repoNames.join("/n");
-            markDown.generateMarkdown(res.data);
-        });
-    }
+        const queryUrl = "https://api.github.com/graphql";
+        // OAuth allows for identity delegation
+        // To get an access token you send the Authentication server this bearer token along with your client id.
+        // https://stackoverflow.com/questions/25838183/what-is-the-oauth-2-0-bearer-token-exactly/25843058
+        const oauth = {Authorization: 'bearer' + process.env.GH_TOKEN};
+        return axios.post(
+            queryUrl,
+            {query: `{user(login: "${username}"){
+                email
+                avatarUrl
+            }
+        }`
+    },
+    {headers: oauth});
+}
 };
 
+module.exports = api;

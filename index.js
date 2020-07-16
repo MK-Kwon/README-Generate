@@ -1,6 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const api = require("./utils/api.js");
+const markDown = require("./utils/generateMarkdown");
+
+// the script uses promisify() to convert the callback-based function fs.writeFile() to the Promise-based function writeFileAsync().
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
 const questions = [
@@ -38,8 +42,10 @@ const questions = [
     }
 ];
 
-function writeToFile(fileName, data) {
-    fs.writeFile("repos.txt", repoNamesStr, function(err){
+// The word “async” before a function means one simple thing: a function always returns a promise.
+// ask the javascript engine running the code to wait for the writeToFile() function to complete before moving on to the next line to execute it. The writeToFile() function returns a Promise for which user will await 
+async function writeToFile(fileName, data) {
+    await writeFileAsync(fileName, data, function(err){
         if(err) {
             return console.log(err);
         }
@@ -48,9 +54,25 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-    inquirer.prompt(questions).then(function(answers){
-        console.log(answers);
-        api.getUser(answers.username);
+    inquirer.prompt(questions).then(async function(answers){
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch
+        // The try statement consists of a try-block, which contains one or more statements. {} must always be used, even for single statements. At least one catch-block, or a finally-block, must be present. 
+        // A catch-block contains statements that specify what to do if an exception is thrown in the try-block. If any statement within the try-block (or in a function called from within the try-block) throws an exception, control is immediately shifted to the catch-block. If no exception is thrown in the try-block, the catch-block is skipped.
+        try {
+            // 1. Grab username and answers 
+            const userData = await api.getUser(answer.username);
+            // Object.assign(target, ...sources) - 1. target: It is the target object from which values and properties have to be copied.  2. It is the source object to which values and properties have to be copied.
+            // 2. Assign the data from 1 to a markdown
+            const data = Object.assign({}, answer, userData.data.data.user);
+            // 3. Save the markdown from 2 to README.md file
+            const markStr = markDown.generateMarkdown(data);
+            
+            writeToFile("README.md", markStr);
+            // if functions within try throws an error print error on console.    
+        } catch(err) {
+            console.log(err);
+        }
+        
     });
 }   
 
