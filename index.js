@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const axios = require("axios");
+const api = require("./utils/api.js");
 
 
 const questions = [
@@ -48,7 +48,10 @@ function writeToFile(fileName, data) {
 }
 
 function init() {
-
-}
+    inquirer.prompt(questions).then(function(answers){
+        console.log(answers);
+        api.getUser(answers.username);
+    });
+}   
 
 init();
