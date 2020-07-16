@@ -1,0 +1,19 @@
+{
+  "name": "readme-generate",
+  "version": "1.0.0",
+  "description": "A command-line application that dynamically generates a README.md from a user's input.  Table of Contents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MK-Kwon/README-Generate.git"
+  },
+  "author": "Min Kyung Kwon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MK-Kwon/README-Generate/issues"
+  },
+  "homepage": "https://github.com/MK-Kwon/README-Generate#readme"
+}
