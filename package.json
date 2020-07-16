@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/MK-Kwon/README-Generate/issues"
   },
-  "homepage": "https://github.com/MK-Kwon/README-Generate#readme"
+  "homepage": "https://github.com/MK-Kwon/README-Generate#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.3.2"
+  }
 }
