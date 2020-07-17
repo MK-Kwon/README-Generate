@@ -11,20 +11,28 @@ const writeFileAsync = util.promisify(fs.writeFile);
 const questions = [
     {
         message: "Enter your Github Username.",
-        name: "Username"
+        name: "username"
     },
     {
         message: "Enter the title of your project.",
-        name: "Title"
+        name: "title"
+    },
+    {
+        message: "Enter a description of your project.",
+        name: "desc"
     },
     {
         message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.",
         name: "install"
     },
     {
+        message: "Provide instructions and examples for use.",
+        name: "usage"
+    },
+    {
         type: "list",
         message: "Choose a license that fits best for your project",
-        name: "License",
+        name: "license",
         choices: [
             "Apache License 2.0",
             "GNU GPLv3",
