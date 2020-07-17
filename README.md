@@ -19,7 +19,15 @@
   
   ## Installation
   
-  1. Download project 2. run ```npm install``` 3. Log into your Github Account 4. Navigate to Personal Settings -> Developer Settings -> Personal Access Tokens 5. Click 'Generate New Token button and select checkboxes to get your e-mail address 6. Copy token to your clip board 7. Create a file with extension .env at the root of the project. 8. Create variable named ```GH_TOKEN``` and set the value as the token generated from step 5 9. Run ```node index.js``` in the terminal
+  1. Download project 
+  2. run ```npm install``` 
+  3. Log into your Github Account 
+  4. Navigate to Personal Settings -> Developer Settings -> Personal Access Tokens 
+  5. Click 'Generate New Token button and select checkboxes to get your e-mail address 
+  6. Copy token to your clip board 
+  7. Create a file with extension .env at the root of the project. 
+  8. Create variable named ```GH_TOKEN``` and set the value as the token generated from step 5 
+  9. Run ```node index.js``` in the terminal
   
   
   ## Usage
@@ -43,6 +51,8 @@
   
   
   ## Questions
+   
+   ![User's Avatar](https://avatars1.githubusercontent.com/u/61897671?u=3da33e30c0f2a109c16120e650da047b8c6ba75c&v=4s=50)
+   
    00mk.kwon00@gmail.com
-   ![User's Avatar](https://avatars1.githubusercontent.com/u/61897671?u=3da33e30c0f2a109c16120e650da047b8c6ba75c&v=4s=100)
  
