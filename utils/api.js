@@ -8,7 +8,7 @@ const api = {
         // OAuth allows for identity delegation
         // To get an access token you send the Authentication server this bearer token along with your client id.
         // https://stackoverflow.com/questions/25838183/what-is-the-oauth-2-0-bearer-token-exactly/25843058
-        const oauth = {Authorization: 'bearer' + process.env.GH_TOKEN};
+        const oauth = {Authorization: 'bearer ' + process.env.GH_TOKEN};
         return axios.post(
             queryUrl,
             {query: `{user(login: "${username}"){
