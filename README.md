@@ -1,6 +1,6 @@
 
 
-![Imgur](https://i.imgur.com/7t2KerM.mp4)
+![Imgur](https://i.imgur.com/7t2KerM)
   
   # README-Generate
   ![GitHub All Releases](https://img.shields.io/github/downloads/MK-Kwon/README-Generate/total)
