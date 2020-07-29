@@ -1,5 +1,5 @@
 
-<img src=<img src="https://media.giphy.com/media/YoKycJGiRgoWR8b4hd/giphy.gif" width:1000 height:800>
+<img src="https://i.imgur.com/7t2KerM.mp4" width:1000 height:800>
   
   # README-Generate
   ![GitHub All Releases](https://img.shields.io/github/downloads/MK-Kwon/README-Generate/total)
