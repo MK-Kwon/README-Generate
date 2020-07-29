@@ -1,6 +1,6 @@
 
-<img src="https://i.imgur.com/7t2KerM.mp4" title="source: imgur.com" />
 
+![Imgur](https://i.imgur.com/7t2KerM.mp4)
   
   # README-Generate
   ![GitHub All Releases](https://img.shields.io/github/downloads/MK-Kwon/README-Generate/total)
